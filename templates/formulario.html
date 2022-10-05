@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Formulario Estudiantes
+{% endblock %}
+{% with messages = get_flashed_messages() %}  {% if messages %}    <ul class=flashes>    {% for message in messages %}      <li>{{ message }}</li>    {% endfor %}    </ul>  {% endif %}{% endwith %}
+{% block contenido %}
+   <form action="/estudianteguardar/" method="post">
+    {{ form.hidden_tag() }}
+    <div class="input-group mb-3">
+        {{ form.documento.label }}
+        {{ form.documento }}
+    </div>
+    <div class="input-group mb-3">
+        {{ form.nombre.label }}
+        {{ form.nombre }}
+    </div>
+    <div class="input-group mb-3">
+        {{ form.genero.label }}
+        {{ form.genero }}
+    </div>
+    <div class="input-group mb-3">
+        {{ form.ciclo.label }}
+        {{ form.ciclo }}
+    </div>
+    <div class="input-group mb-3">
+        {{ form.estado.label }}
+        {{ form.estado }}
+    </div>
+    <div class="input-group mb-3">
+        {{ form.correo.label }}
+        {{ form.correo }}
+    <div class="input-group mb-3">
+        {{ form.guardar}}
+        {{ form.eliminar}}
+        {{ form.modificar}}
+    </div>
+   </form> 
+{% endblock %}

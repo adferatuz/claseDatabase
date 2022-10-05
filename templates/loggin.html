@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Loggin{% endblock %}
+{% block contenido %}
+    <h1>Loggin</h1>
+    <form action="/loggin" method="post">
+        {{ form.hidden_tag() }}
+        <div>{{ form.usuario.label }} {{ form.usuario() }}</div><br>
+        <div>{{ form.clave.label }} {{ form.clave() }}</div><br>
+        <div>{{ form.ingresar () }}</div>
+    </form>
+{% endblock %}

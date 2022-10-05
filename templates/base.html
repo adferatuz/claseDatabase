@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %} {% endblock %}</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href=""{{url_for('static', filename='js/bootstrap.bundle.min.js')}}">
+</head>
+<body>
+    <!-- contenido barra de navegacion -->
+    <div class="container text-center">
+        <div class="row">                          
+              <nav class="navbar navbar-dark bg-primary">
+                inicio <br>
+                formulario
+                <!-- Navbar content -->
+              </nav>                           
+        </div>
+ 
+        <!-- contenido -->
+
+        <div class="row">
+          <div class="col">
+            Column
+          </div>
+          <div class="col">
+            <!-- cuando es bloque de contenido va con una sola llave -->
+            <!-- cuando hace referencia a una variable es con las dos llaves -->
+            {% block contenido %} {% endblock %}
+          </div>         
+        </div>
+      </div>
+ 
+      <!-- parte footer -->
+
+      <div class="row">
+        <div class="card">
+            <div class="card-header">
+              Quote
+            </div>
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <p>A well-known quote, contained in a blockquote element.</p>
+                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+              </blockquote>
+            </div>
+          </div>
+      </div>
+</body>
+</html>
